@@ -1,4 +1,4 @@
-FROM python:3.3
+FROM python:3-slim
 
 RUN pip install \
     blessings \
@@ -8,3 +8,5 @@ COPY dnsdiff .
 RUN chmod +x dnsdiff
 
 ENTRYPOINT [ "./dnsdiff" ]
+
+USER nobody
